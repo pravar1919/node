@@ -39,7 +39,7 @@ async function updateGenres(req, res) {
 }
 
 async function deleteGenre(req, res) {
-  const genre = await Genre.findByIdAndRemove(req.params.id);
+  const genre = await Genre.findByIdAndDelete(req.params.id);
   res.status(204).json("");
 }
 

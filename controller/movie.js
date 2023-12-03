@@ -54,7 +54,7 @@ async function updateMovies(req, res) {
 }
 
 async function deleteMovie(req, res) {
-  const genre = await Movie.findByIdAndRemove(req.params.id);
+  const genre = await Movie.findByIdAndDelete(req.params.id);
   res.status(204).json("");
 }
 

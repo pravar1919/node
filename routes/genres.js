@@ -1,5 +1,6 @@
 const express = require("express");
 const auth = require("../middleware/auth");
+const admin = require("../middleware/admin");
 
 const {
   getGenres,
@@ -17,7 +18,7 @@ router.post("/", createGenres);
 
 router.put("/:id", updateGenres);
 
-router.delete("/:id", deleteGenre);
+router.delete("/:id", auth, admin, deleteGenre);
 
 router.get("/:id", detailGenres);
 
