@@ -1,3 +1,4 @@
+require("dotenv").config();
 const config = require("config");
 const express = require("express");
 const mongoose = require("mongoose");
@@ -10,6 +11,7 @@ const auth = require("./routes/auth");
 const Joi = require("joi");
 Joi.objectId = require("joi-objectid")(Joi);
 
+console.log(process.env); // remove this after you've confirmed it is working
 if (!config.get("jwtPrivateKey")) {
   console.error("FATAL ERROR: JWT private key is not defined.");
   process.exit(1);
